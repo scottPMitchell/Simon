@@ -110,6 +110,7 @@ void Game::render()
 {
 	m_window.clear();
 	m_window.draw(m_redSquare);
+	m_window.draw(m_blueSquare);
 	m_window.display();
 }
 
@@ -123,7 +124,16 @@ void Game::setupFontAndText()
 
 void Game::setUpButtons()
 {
-	m_redSquare.setFillColor(sf::Color::Red);
+	m_redSquare.setFillColor(RED);
 	m_redSquare.setSize(sf::Vector2f(200, 200));
-	m_redSquare.setPosition(300.0f, 90.0f);
+	m_redSquare.setPosition(350.0f, 50.0f);
+	m_blueSquare.setFillColor(BLUE);
+	m_blueSquare.setSize(sf::Vector2f(200, 200));
+	m_blueSquare.setPosition(575.0f, 50.0f);
+	m_yellowSquare.setFillColor(YELLOW);
+	m_yellowSquare.setSize(sf::Vector2f(200, 200));
+	m_yellowSquare.setPosition(350.0f, 100.0f);
+	m_greenSquare.setFillColor(GREEN);
+	m_greenSquare.setSize(sf::Vector2f(200, 200));
+	m_greenSquare.setPosition(575.0f, 100.0f);
 }

@@ -32,12 +32,19 @@ private:
 
 	sf::RenderWindow m_window; // main SFML window
 
-	sf::Color RED{ 180, 0, 0, 225 };
+	const sf::Color RED{ 180, 0, 0, 225 };
+	const sf::Color BLUE{ 0, 0, 255, 225 };
+	const sf::Color YELLOW{ 255, 255, 0, 225 };
+	const sf::Color GREEN{ 0, 255, 0, 225};
+
 
 	sf::Font m_ArialBlackfont; // font used by message
 	sf::Text m_welcomeMessage; // text used for message on screen
 	
 	sf::RectangleShape m_redSquare;
+	sf::RectangleShape m_blueSquare;
+	sf::RectangleShape m_greenSquare;
+	sf::RectangleShape m_yellowSquare;
 
 	bool m_exitGame; // control exiting game 
 
