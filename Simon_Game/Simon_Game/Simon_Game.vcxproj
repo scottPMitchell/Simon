@@ -26,6 +26,7 @@
     <ClInclude Include="Game.h" />
   </ItemGroup>
   <ItemGroup>
+    <Font Include="ASSETS\FONTS\ARCADECLASSIC.TTF" />
     <Font Include="ASSETS\FONTS\ariblk.ttf">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>

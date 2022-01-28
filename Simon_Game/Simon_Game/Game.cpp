@@ -15,7 +15,7 @@
 /// load and setup thne image
 /// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
+	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "Simon Game" },
 	m_exitGame{false} //when true game will exit
 {
 	setupFontAndText(); // load font 
@@ -64,6 +64,7 @@ void Game::run()
 /// </summary>
 void Game::processEvents()
 {
+	//const int COL_1_LEFT = 
 	sf::Event newEvent;
 	while (m_window.pollEvent(newEvent))
 	{
@@ -101,6 +102,19 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
+	switch (m_gameMode)
+	{
+	case GameMode::Starting:
+		break;
+	case GameMode::Showing:
+		break;
+	case GameMode::Recieveing:
+		break;
+	case GameMode::GameOver:
+		break;
+	default:
+		break;
+	}
 }
 
 /// <summary>
@@ -110,6 +124,10 @@ void Game::render()
 {
 	m_window.clear();
 	m_window.draw(m_redSquare);
+	m_window.draw(m_blueSquare);
+	m_window.draw(m_greenSquare);
+	m_window.draw(m_yellowSquare);
+	m_window.draw(m_SimonIntroText);
 	m_window.display();
 }
 
@@ -118,12 +136,32 @@ void Game::render()
 /// </summary>
 void Game::setupFontAndText()
 {
-	
+	if (!m_PixelFont.loadFromFile("ASSETS\\FONTS\\ARCADECLASSIC.TTF"))
+	{
+		// simple error message if previous call fails
+		std::cout << "problem loading font" << std::endl;
+	}
+	m_SimonIntroText.setFont(m_PixelFont);
+	m_SimonIntroText.setString("Simon Game");
+	m_SimonIntroText.setPosition(30.0f, 30.0f);
+	m_SimonIntroText.setCharacterSize(60U);
+	m_SimonIntroText.setOutlineColor(sf::Color::White);
+	m_SimonIntroText.setFillColor(sf::Color::Black);
+	m_SimonIntroText.setOutlineThickness(2.0f);
 }
 
 void Game::setUpButtons()
 {
-	m_redSquare.setFillColor(sf::Color::Red);
+	m_redSquare.setFillColor(RED);
 	m_redSquare.setSize(sf::Vector2f(200, 200));
-	m_redSquare.setPosition(300.0f, 90.0f);
+	m_redSquare.setPosition(570.0f, 30.0f);
+	m_blueSquare.setFillColor(BLUE);
+	m_blueSquare.setSize(sf::Vector2f(200, 200));
+	m_blueSquare.setPosition(570.0f, 250.0f);
+	m_greenSquare.setFillColor(GREEN);
+	m_greenSquare.setSize(sf::Vector2f(200, 200));
+	m_greenSquare.setPosition(350.0f, 30.0f);
+	m_yellowSquare.setFillColor(YELLOW);
+	m_yellowSquare.setSize(sf::Vector2f(200, 200));
+	m_yellowSquare.setPosition(350.0f, 250.0f);
 }

@@ -9,7 +9,13 @@
 /// Don't forget the endif at the bottom
 /// </summary>
 #include <SFML/Graphics.hpp>
-
+enum class GameMode
+{
+	Showing,
+	Recieveing,
+	GameOver,
+	Starting
+};
 class Game
 {
 public:
@@ -32,12 +38,20 @@ private:
 
 	sf::RenderWindow m_window; // main SFML window
 
-	sf::Color RED{ 180, 0, 0, 225 };
+	const sf::Color RED{ 225, 0, 0, 225 };
+	const sf::Color BLUE{ 0, 0, 225, 225 };
+	const sf::Color GREEN{ 0, 225, 0, 225 };
+	const sf::Color YELLOW{ 225, 225, 0, 225 };
 
-	sf::Font m_ArialBlackfont; // font used by message
-	sf::Text m_welcomeMessage; // text used for message on screen
+	sf::Font m_PixelFont; // font used by message
+	sf::Text m_SimonIntroText; // text used for message on screen
 	
 	sf::RectangleShape m_redSquare;
+	sf::RectangleShape m_blueSquare;
+	sf::RectangleShape m_greenSquare;
+	sf::RectangleShape m_yellowSquare;
+
+	GameMode m_gameMode;
 
 	bool m_exitGame; // control exiting game 
 

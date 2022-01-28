@@ -37,5 +37,8 @@
     <Font Include="ASSETS\FONTS\ariblk.ttf">
       <Filter>Resource Files\FONTS</Filter>
     </Font>
+    <Font Include="ASSETS\FONTS\ARCADECLASSIC.TTF">
+      <Filter>Resource Files\FONTS</Filter>
+    </Font>
   </ItemGroup>
 </Project>
